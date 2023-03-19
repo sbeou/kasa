@@ -7,13 +7,13 @@ import About from './pages/About';
 import Header from './components/Header';
 import './styles/styles.scss'
 import FicheLogement from './pages/FicheLogement';
+import Footer from './components/Footer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <div className='container'>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ root.render(
         <Route path='/logement/:id' element={<FicheLogement />} />
         <Route path='*' element={<Error />} />
       </Routes>
-    </div>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

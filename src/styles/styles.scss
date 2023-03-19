@@ -8,10 +8,13 @@ $grey: #F6F6F6;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    color: $primary;
+    font-size: 18px;
 }
-.container {
+main, header {
     max-width:1240px;
     margin:0 auto;
+    padding: 40px 20px;
 }
 
 //Header
@@ -19,8 +22,8 @@ $grey: #F6F6F6;
 header {
     display: flex;
     justify-content: space-between;
-    padding: 40px 0;
     align-items: center;
+    margin-top: 20px;
 }
 
 .logo {
@@ -102,5 +105,186 @@ nav {
                 scale: 1.5;
             }
         }
+    }
+}
+
+//Logement Page
+
+.slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+
+    height: 415px;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    .image {
+            width: 1240px;
+            max-width: 100%;
+            height: 415px;
+            object-fit: cover;
+        }
+        .right-arrow, .left-arrow {
+            position: absolute;
+            right: 32px;
+            user-select: none;
+            cursor: pointer;
+            height: 79px;
+            z-index: 10;
+        }
+        .left-arrow {
+            left: 32px;
+            right: none;
+        }
+        .position {
+            z-index: 10;
+            position: absolute;
+            bottom: 30px;
+            color: white;
+        }
+        .slide {
+            opacity: 0;
+            transition-duration: 1s ease;
+        }
+    
+        .slide.active {
+            opacity: 1;
+            transition-duration: 1s;
+            transform: scale(1.08);
+        }
+}
+.headerLogement {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .tag {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        li {
+            background-color: $primary;
+            color: white;
+            font-size: 14px;
+            border-radius: 20px;
+            height: 25px;
+            line-height: 25px;
+            width: 115px;
+            text-align: center;
+        }
+    }
+    .host {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        max-width: 190px;
+        text-align: right;
+        img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+    .rating {
+        list-style: none;
+        display: flex;
+        gap:10px;
+        padding-top: 30px;
+        li {
+            width: 30px;
+        }
+    }
+}
+.logementDetails {
+    display: flex;
+    gap: 75px;
+    .collapse {
+        width: 50%;
+    }
+}
+.collapse {
+    position:relative;
+    overflow: hidden;
+    ul {
+        list-style: none;
+    }
+    button {
+        color:white;
+        background-color: $primary;
+        position: relative;
+        width: 100%;
+        padding: 0 10px;
+        height: 52px;
+        line-height: 52px;
+        border-radius: 10px;
+        border:0;
+        text-align: left;
+        cursor: pointer;
+        z-index: 2;
+        &::after{
+            content: "";
+            display: block;
+            width: 26px;
+            height:52px;
+            position: absolute;
+            top:0;
+            right: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+    .text {
+        background-color: $grey;
+        border-radius: 0 0 10px 10px;
+        transition: all 1000ms ease-in-out;
+        overflow: hidden;
+        padding: 30px 20px;
+        margin-top: -10px;
+        position: relative;
+    }
+    &.open {
+        .text{
+            visibility: visible;
+            top:0;
+        }
+        button::after {
+            background-image: url('../assets/arrow_up.svg');
+        }
+    }
+        &.close {
+            .text {
+                visibility: hidden;
+                top:-500px;
+            }
+    
+            button::after {
+                background-image: url('../assets/arrow_down.svg');
+            }
+        }
+}
+// Footer 
+
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding:60px;
+    font-size: 24px;
+    align-items: center;
+    img {
+        width:auto;
+        height: 35px;
+    }
+    p {
+        color: white;
     }
 }
