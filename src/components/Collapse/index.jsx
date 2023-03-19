@@ -9,7 +9,7 @@ function Collapse({title, text}) {
         <div className={`collapse ${visible}`}>
             <button onClick={() => setCollapse()}>{title}</button>
             <div className='text'>
-                {text}
+                <div>{text}</div>
             </div>
         </div>
      )

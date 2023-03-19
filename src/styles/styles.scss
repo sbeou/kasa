@@ -213,6 +213,9 @@ nav {
 .collapse {
     position:relative;
     overflow: hidden;
+    margin-bottom: 40px;
+    background-color: $grey;
+    border-radius: 0 0 10px 10px;
     ul {
         list-style: none;
     }
@@ -242,12 +245,9 @@ nav {
         }
     }
     .text {
-        background-color: $grey;
-        border-radius: 0 0 10px 10px;
-        transition: all 1000ms ease-in-out;
+        transition: all 500ms ease-in-out;
         overflow: hidden;
-        padding: 30px 20px;
-        margin-top: -10px;
+        padding: 20px;
         position: relative;
     }
     &.open {
@@ -263,6 +263,8 @@ nav {
             .text {
                 visibility: hidden;
                 top:-500px;
+                height:0px; 
+                padding: 0px;
             }
     
             button::after {
@@ -270,6 +272,13 @@ nav {
             }
         }
 }
+
+// About 
+.collapseAbout {
+    max-width:1024px;
+    margin:0 auto;
+}
+
 // Footer 
 
 footer {
