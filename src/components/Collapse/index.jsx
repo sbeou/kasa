@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 
 function Collapse({title, text}) {
-     const [visible, setVisible] = useState('open')
+     const [visible, setVisible] = useState('close')
      const setCollapse = () => {
-        setVisible(visible === 'open' ? 'close' : 'open')
+        setVisible(visible === 'close' ? 'open' : 'close')
      }
      return (
         <div className={`collapse ${visible}`}>

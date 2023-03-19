@@ -48,11 +48,13 @@ function FicheLogement(){
             <section className="logementDetails">
                 <Collapse 
                     title={"Description"}
-                    text={<p>Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied).</p>}
+                    text={logement.description}
                 />
                  <Collapse 
                     title={'Équipements'}
-                    text={<ul><li>Climatisation<li></li>Wi-Fi<li></li>Cuisine<li></li>Espace de travail<li></li>Fer à repasser<li></li>Sèche-cheveux<li></li>Cintres</li></ul>}
+                    text={<ul>{logement.equipments.map((text, index) => (
+                        <li key={index}>{text}</li>
+                    ))}</ul>}
                 />
             </section>
         </main>
