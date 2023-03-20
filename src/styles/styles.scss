@@ -1,4 +1,4 @@
-@import url('https: //fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400;500;700&family=Shrikhand&display=swap');
+@import url('https: //fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700');
 
 $primary:#FF6060;
 $grey: #F6F6F6;
@@ -14,7 +14,7 @@ $grey: #F6F6F6;
 main, header {
     max-width:1240px;
     margin:0 auto;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 //Header
@@ -58,7 +58,7 @@ nav {
     height: 223px;
     line-height: 223px;
     text-align: center;
-    margin: 30px 0;
+    margin-bottom: 30px;
     h2 {
         font-weight: 500;
         font-size: 48px;
@@ -96,6 +96,7 @@ nav {
             background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
             padding: 20px;
             transition: all 500ms ease-in-out;
+            font-size: 18px;
         }
         &:hover {
             h3{
@@ -214,8 +215,6 @@ nav {
     position:relative;
     overflow: hidden;
     margin-bottom: 40px;
-    background-color: $grey;
-    border-radius: 0 0 10px 10px;
     ul {
         list-style: none;
     }
@@ -247,8 +246,11 @@ nav {
     .text {
         transition: all 500ms ease-in-out;
         overflow: hidden;
-        padding: 20px;
+        padding: 30px 20px;
+        margin-top: -10px;
         position: relative;
+        background-color: $grey;
+        border-radius: 0 0 10px 10px;
     }
     &.open {
         .text{
@@ -265,6 +267,7 @@ nav {
                 top:-500px;
                 height:0px; 
                 padding: 0px;
+                margin-top: 0;
             }
     
             button::after {
@@ -274,6 +277,9 @@ nav {
 }
 
 // About 
+.banner.about {
+    background-image: url('../assets/kalen-emsley-Bkci_8qcdvQ-unsplash\ 2.jpg');
+}
 .collapseAbout {
     max-width:1024px;
     margin:0 auto;
@@ -301,4 +307,96 @@ footer {
 // About 
 .banner .about {
     background-image: url('../assets/kalen-emsley-Bkci_8qcdvQ-unsplash\ 2.jpg');
+}
+
+// Error 
+.error404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+    padding: 50px 0;
+    text-align: center;
+    h1 {
+        font-size: 288px;
+        font-weight: 700;
+    }
+
+}
+
+@media (max-width:768px) {
+    * , nav a{
+        font-size: 12px;
+    }
+    nav {
+        gap:10px;
+    }
+    nav a {
+        text-transform: uppercase;
+    }
+    .logo {
+        height:37px;
+    }
+    .cardList {
+        flex-direction: column;
+        padding: 0;
+        background-color: white;
+        align-items: center;
+    }
+    .banner {
+        height: 110px;
+        line-height: normal;
+    }
+    .banner h2 {
+        font-size: 24px;
+        padding: 26px 120px 26px 30px;
+        text-align: left;
+    }
+    .headerLogement, .logementDetails {
+        flex-direction: column;
+        gap:0;
+    }
+    .headerLogement h1 {
+        font-size: 18px;
+    }
+    .logementDetails .collapse {
+        width: inherit;
+    }
+    .headerLogement .right {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 30px;
+        justify-content: space-between;
+    }
+    .headerLogement .rating li {
+        width: 15px;
+    }
+    .headerLogement .host {
+        max-width: 140px;
+    }
+    .slider .right-arrow, .slider .left-arrow {
+        height:20px;
+    }
+    .slider, .slider.image {
+        height:255px;
+    }
+    header {
+        padding-bottom: 0;
+    }
+    .banner.about h2, .banner.about {
+        height: 223px;
+    }
+    .error404 {
+        justify-content: space-around;
+        h1 {
+            font-size: 96px;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            font-size: 14px;
+        }
+    }
 }
