@@ -6,10 +6,10 @@ function Header(){
         <header>
             <Link to={'/'}><img src={Logo} alt='Kasa' className='logo' /></Link>
             <nav>
-                <NavLink exact activeClassName='active' to={'/'}>
+                <NavLink exact="true" activeclassname='active' to={'/'}>
                     Accueil
                 </NavLink>
-                <NavLink  activeClassName='active' to={'/a-propos'}>
+                <NavLink  activeclassname='active' to={'/a-propos'}>
                     A Propos
                 </NavLink>
             </nav>
