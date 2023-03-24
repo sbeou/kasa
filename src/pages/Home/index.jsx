@@ -1,6 +1,5 @@
 import  logements  from '../../data/logements.json'
 import Card from '../../components/Card'
-import { Link } from 'react-router-dom'
 function Home() {
     return (
         <main>
@@ -8,15 +7,14 @@ function Home() {
                 <h2>Chez vous, partout et ailleurs</h2>
             </div>
             <div className="cardList">
-                {logements.map((logement,index) => (
-                    <article key={logement.id}>
-                        <Link to={`/logement/${index}`}>
-                            <Card 
-                                cover={logement.cover}
-                                title={logement.title}
-                            />
-                        </Link>
-                    </article>
+                {logements.map((logement) => (
+                    <Card 
+                        key={logement.id}
+                        cover={logement.cover}
+                        title={logement.title}
+                        id={logement.id
+                        }
+                    />
                 ))}
             </div>
         </main>

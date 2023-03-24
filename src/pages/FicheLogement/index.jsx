@@ -8,9 +8,9 @@ import Collapse from "../../components/Collapse"
 
 
 function FicheLogement(){
-    const { id: queryId } = useParams()
+    const { id } = useParams()
     const navigate = useNavigate()
-    const logement = logements[queryId]
+    const logement = logements.find(item => item.id === id)
     
     useEffect(() => {
         if(logement === undefined) {
@@ -24,7 +24,7 @@ function FicheLogement(){
             let stars = ""
             for (let index = 0; index < 5; index++) {
                 if(index < number) {
-                    stars += `<li><img src=${Star} alt="star" /></li>`  
+                    stars += `<li><img src=${Star} alt="star" /></li>`   
                 }
                 else {
                     stars += `<li><img src=${StarGrey} alt="star" /></li>`
