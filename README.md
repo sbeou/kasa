@@ -1,3 +1,6 @@
+# Environment pre-requis
+Node.js v14.5.0
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

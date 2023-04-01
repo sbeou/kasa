@@ -1,9 +1,14 @@
+import Banner from "../../components/Banner"
 import Collapse from "../../components/Collapse"
+import bannerBackground2 from "../../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.jpg"
 
 function About(){
     return(
         <main>
-            <div className="banner about"><h2>&nbsp;</h2></div>
+            <Banner
+                titlePage=''
+                image={bannerBackground2}
+            />
             <section className="collapseAbout">
                 <Collapse
                     title={'Fiabilité'}

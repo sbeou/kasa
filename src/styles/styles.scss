@@ -50,20 +50,30 @@ nav {
 
 // Home
 .banner {
-    background-size: cover;
-    background:  url('../assets/IMG.jpg') center;
     border-radius: 25px;
     overflow: hidden;
-    mix-blend-mode: darken;
     height: 223px;
     line-height: 223px;
     text-align: center;
     margin-bottom: 30px;
+    position: relative;
     h2 {
         font-weight: 500;
         font-size: 48px;
         color: white;
         background: rgba($color: #000000, $alpha: 0.3);
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+    }
+    img {
+        object-fit: cover;
+        mix-blend-mode: darken;
+        height: 223px;
+        width: 100%;
+        
     }
 }
 .cardList {

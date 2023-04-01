@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom"
 import ImageSlider from "../../components/ImageSlider"
 import  logements  from '../../data/logements.json'
-import Star from "../../assets/star.svg"
-import StarGrey from "../../assets/star_grey.svg"
 import React, { useEffect } from "react"
 import Collapse from "../../components/Collapse"
+import RatingStar from "../../components/RatingStar"
 
 
 function FicheLogement(){
@@ -20,18 +19,7 @@ function FicheLogement(){
     if(logement) {
         const picturesData = logement.pictures
         const starNumber = parseInt(logement.rating)
-        function ratingStar(number) {
-            let stars = ""
-            for (let index = 0; index < 5; index++) {
-                if(index < number) {
-                    stars += `<li><img src=${Star} alt="star" /></li>`   
-                }
-                else {
-                    stars += `<li><img src=${StarGrey} alt="star" /></li>`
-                }
-            }
-            return (stars)
-        }
+        
          return (
             <main>
                 <ImageSlider slides={picturesData} />
@@ -50,7 +38,8 @@ function FicheLogement(){
                             {logement.host.name}
                             <img src={logement.host.picture} alt={logement.host.name} />
                         </div>
-                        <ul dangerouslySetInnerHTML={{ __html: ratingStar(starNumber)}} className='rating'></ul>
+                        <RatingStar 
+                        number={starNumber} />
                     </div>
                 </section>
                 <section className="logementDetails">
@@ -61,7 +50,7 @@ function FicheLogement(){
                     <Collapse 
                         title={'Équipements'}
                         text={<ul>{logement.equipments.map((text, index) => (
-                            <li key={index}>{text}</li>
+                            <li key={`equipement-${index}`}>{text}</li>
                         ))}</ul>}
                     />
                 </section>
