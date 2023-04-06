@@ -13,21 +13,19 @@ function ImageSlider({slides}) {
     function prevSlide() {
         setCurrent(current === 0 ? length -1 : current -1)
     }
-    if (slides.lenght <= 0) {
+    if (slides.length <= 0) {
         return null
     }
     return (
         <div className="slider">
-            <img src={ArrowLeft} className='left-arrow' onClick={prevSlide} alt='Prev'/>
-            <img src={ArrowRight} className='right-arrow' onClick={nextSlide} alt='Next'/>
+            {length > 1 && (<img src={ArrowLeft} className='left-arrow' onClick={prevSlide} alt='Prev'/>)}
+            {length > 1 && (<img src={ArrowRight} className='right-arrow' onClick={nextSlide} alt='Next'/>)}
             {slides.map((slide, index) => (
                 <div className={index === current ? 'slide active' : 'slide'} key={index}>
                     {index === current && (<img src={slide} alt='Logement' className="image" />)}
                 </div>
             ))}
-            <div className="position">
-                {current +1}/{length}
-            </div>
+            {length > 1 && (<div className="position">{current +1}/{length}</div>)}
         </div>
     )
 }

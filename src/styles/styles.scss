@@ -360,8 +360,10 @@ footer {
     }
     .banner h2 {
         font-size: 24px;
-        padding: 26px 120px 26px 30px;
+        padding: 26px 80px 26px 30px;
         text-align: left;
+        height: 58px;
+        width: calc(100% - 110px);
     }
     .headerLogement, .logementDetails {
         flex-direction: column;
